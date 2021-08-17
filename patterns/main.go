@@ -9,7 +9,7 @@ func main() {
 	fmt.Println(laptop)
 	fmt.Println(desktop)
 
-	TestInstanceDatabase()
+	//TestInstanceDatabase()
 
 	cash := &CashPayment{}
 	ProcessPayment(cash)
@@ -30,4 +30,16 @@ func main() {
 	nvidiaItem.Register(firstObserver)
 	nvidiaItem.Register(secondObserver)
 	nvidiaItem.UpdateAvailable()
+
+	sha := &SHA{}
+	md5 := &MD5{}
+	passwordProtector := PasswordProtector{
+		user:          "carl",
+		passwordName:  "gmail",
+		hashAlgorithm: sha,
+	}
+
+	passwordProtector.Hash()
+	passwordProtector.SetHashAlgorithm(md5)
+	passwordProtector.Hash()
 }
