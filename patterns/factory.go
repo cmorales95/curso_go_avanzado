@@ -1,3 +1,4 @@
+/*Creational Pattern*/
 package main
 
 import "errors"
@@ -10,7 +11,7 @@ type IProduct interface {
 }
 
 type Computer struct {
-	name string
+	name  string
 	stock int
 }
 
