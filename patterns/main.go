@@ -22,4 +22,12 @@ func main() {
 		BankAccount: 5,
 	}
 	ProcessPayment(bpa)
+
+	nvidiaItem := NewItem("RTX 3080")
+	firstObserver := &Email{id: "12ab"}
+	secondObserver := &Email{id: "34dc"}
+
+	nvidiaItem.Register(firstObserver)
+	nvidiaItem.Register(secondObserver)
+	nvidiaItem.UpdateAvailable()
 }
