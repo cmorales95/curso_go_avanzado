@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("---Factory---")
 	laptop, _ := ComputerFactory("Laptop")
 	desktop, _ := ComputerFactory("Desktop")
 
@@ -11,4 +10,16 @@ func main() {
 	fmt.Println(desktop)
 
 	TestInstanceDatabase()
+
+	cash := &CashPayment{}
+	ProcessPayment(cash)
+
+	//bank := &BankPayment{}
+	//ProcessPayment(bank)
+
+	bpa := &BankPaymentAdapter{
+		BankPayment: &BankPayment{},
+		BankAccount: 5,
+	}
+	ProcessPayment(bpa)
 }
